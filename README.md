@@ -1,0 +1,2 @@
+# WiFiInfo
+get Wifi Info
