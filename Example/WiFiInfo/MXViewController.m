@@ -7,6 +7,7 @@
 //
 
 #import "MXViewController.h"
+#import "WifiInfo.h"
 
 @interface MXViewController ()
 
@@ -17,6 +18,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //iOS获取当前手机WIFI名称信息
+       NSString *currentSSID = [WifiInfo fetchSSIDInfo];
+       NSLog(@"WIFI名称：%@", currentSSID);
+       
+       NSString *gatewayIp = [WifiInfo getGatewayIpForCurrentWiFi];
+       NSLog(@"网关地址：%@", gatewayIp);
+       
+       NSString *dns = [WifiInfo outPutDNSServers];
+       NSLog(@"DNS服务器：%@", dns);
 }
 
 - (void)didReceiveMemoryWarning
